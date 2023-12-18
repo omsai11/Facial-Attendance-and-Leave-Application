@@ -22,14 +22,14 @@ from win32com.client import Dispatch
 from twilio.rest import Client
 
 # Your Twilio account SID and auth token from the Twilio Console
-account_sid = 'ACe0b7a55e22b79a4a619765f22ca4ab50'
-auth_token = 'b774972231658cf8a67b5a6cf2139b7d'
+account_sid = ''
+auth_token = ''
 
 # Create a Twilio client
 client = Client(account_sid, auth_token)
 
 # Replace with your Twilio phone number and the recipient's phone number
-twilio_phone_number = 'whatsapp:+14155238886'
+twilio_phone_number = 'whatsapp:'
 recipient_phone_number = 'whatsapp:+919067951440'  # Replace with the recipient's phone number
 
 # The message you want to send
