@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+  <body>
+        <div class="page1">
+            <div class="above">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="481" viewBox="0 0 auto 481" fill="none">
+                    <path d="M1920 0H0V423.29C218.247 155.496 1103.75 542.937 1452.64 472.21C1801.54 401.482 1920 330.235 1920 330.235V0Z" fill="url(#paint0_linear_139_100)"/>
+                    <defs>
+                      <linearGradient id="paint0_linear_139_100" x1="960" y1="0" x2="960" y2="481" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#3F72D8"/>
+                        <stop offset="1" stop-color="#3FD8C6" stop-opacity="0.9"/>
+                      </linearGradient>
+                    </defs>
+                    </svg> -->
+                  <div class="nav">
+                    <button id="signout">Sign out</button>
+                   </div>
+                   <div class="shape">
+                    <h3>Face Recognization</h3>
+                    <p>Shri Guru Gobind Singhji Institute of Engineering and Technology Nanded.</p>
+                   </div>
+            </div>
+            <div class="circle">
+                <div class="round-btn">
+                    <button id="changeRouteButton">
+                        <span class="material-symbols-outlined">
+                            sensor_occupied
+                            </span>
+                            Daily <br>Attendence</button>
+                    <button id="leave">
+                        <span class="material-symbols-outlined">
+                            assignment
+                            </span>
+                            Leave <br>Application</button>
+                </div>
+            </div>
+        </div>
+        <script>
+          function changeRoute() {
+              // Change the URL without reloading the page
+              window.location.href = '/attendance';
+  
+              // Log the route change to the console
+              console.log('Route changed to: ' + window.location.pathname);
+          }
+
+          function changeRoute1() {
+              // Change the URL without reloading the page
+              window.location.href = '/leave';
+  
+              // Log the route change to the console
+              console.log('Route changed to: ' + window.location.pathname);
+          }
+
+          function changeRoute2() {
+              // Change the URL without reloading the page
+              window.location.href = '/';
+  
+              // Log the route change to the console
+              console.log('Route changed to: ' + window.location.pathname);
+          }
+
+          const button3 = document.getElementById('signout');
+          button3.addEventListener('click', changeRoute2);
+
+          const button1 = document.getElementById('changeRouteButton');
+          button1.addEventListener('click', changeRoute);
+
+          const button2 = document.getElementById('leave');
+          button2.addEventListener('click', changeRoute1);
+
+
+      </script>
+  </body>
+</html>

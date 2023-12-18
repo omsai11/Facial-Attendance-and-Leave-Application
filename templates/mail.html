@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+        <div class="page">
+         <div class="navbar">
+          <!-- <span class="material-symbols-outlined">
+            arrow_back_ios
+            </span> -->
+            <h2>Leave Applications</h2>
+         </div>
+         <div class="below">
+            <div class="para">
+                <p>To,<br>
+                    HOD,<br>
+                    CSE Department,<br>
+                    SGGS, Nanded.<br>
+                    <br>
+                    <form action="/submit" method="POST">
+                    <label for="name">Name:</label>
+                    <input style="margin-bottom: 10px;" type="text" id="name" name="name">
+                    <br>
+                    <label for="reason">Your reason for leave:</label>
+                    <input style="margin-bottom: 10px;" type="text" id="reason" name="reason">
+                    <br>
+                    <label for="reason">Contact:</label>
+                    <input style="margin-bottom: 10px;" type="text" id="mbl" name="mbl">
+
+                    <div class="btn">
+                      <button>Send</button>
+                  </div>
+                    </form>
+                    <br><br>
+                  </p>
+            </div>
+            
+         </div>
+        </div>
+  </body>
+</html>

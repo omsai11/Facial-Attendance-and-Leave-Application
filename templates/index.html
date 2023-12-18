@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Login</title>
+    <link rel="icon" href="images\favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images\favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container" id = "main">
+        <div class="sign-up">
+            <form action="/admin" method="post">
+                <h1>Department Login</h1>
+                <p>Enter your Credientials</p>
+                <input type="email" name="email" placeholder="Email" required="" id="">
+                <input type="password" name="password" placeholder="Password" required="" id="">
+                <button>Sign In</button>
+            </form>
+        </div>
+
+        <!-- Sign in -->
+        <div class="sign-in">
+            <form action="/login" method="post">
+                <h1>User Login</h1>
+                <p>Enter your Credientials</p>
+                <input type="email" name="email" placeholder="Email" required="" id="">
+                <input type="password" name="password" placeholder="Password" required="" id="">
+                <a href="#">Forgot your password</a>
+                <div id="error-message" class="error-message"></div>
+                <button>Sign In</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <button id="signIn">User Login</button>
+                </div>
+                <div class="overlay-right">
+                    <h1>Welcome</h1>
+                    <button id="signUp">Department Login</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        const signUpButton=document.getElementById('signUp');
+        const signInButton=document.getElementById('signIn');
+        const main=document.getElementById('main');
+        signUpButton.addEventListener('click',() => {
+            main.classList.add("right-panel-active");
+        });
+        signInButton.addEventListener('click',()=> {
+            main.classList.remove("right-panel-active");
+        });
+    
+        // Function to get URL parameter by name
+        function getParameterByName(name) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(name);
+        }
+    
+        // Get the 'error' query parameter from the URL
+        const error = getParameterByName('error');
+    
+        // If 'error' parameter exists and has a value, display it
+        if (error && error === 'Invalid credentials') {
+          const errorMessage = document.createElement('div');
+          errorMessage.textContent = error;
+          errorMessage.style.color = 'red';
+          //document.body.insertBefore(errorMessage, document.querySelector('.container'));
+          document.getElementById('error-message').appendChild(errorMessage);
+          document.getElementById('error-message').style.display = 'block';
+        }
+      </script>
+</body>
+</html>

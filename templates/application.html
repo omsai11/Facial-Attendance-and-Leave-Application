@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>face reccognization</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="page">
+    <div class="navbar">
+      <h2>Leave Applications</h2>
+    </div>
+    <div class="list">
+      <div class="list">
+        {% for application in applications %}
+        <div class="item">
+          <div class="text">
+            <p>{{ application[0] }}</p>
+            <p>{{ application[1] }}</p>
+            <p>{{ application[2] }}</p>
+          </div>
+          <div class="btn">
+            <a href="{{ url_for('accept_leave_application', name=application[0]) }}"><button>Accept</button></a>
+            <a href="{{ url_for('delete_leave_application', name=application[0]) }}"><button>Decline</button></a>
+        </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+   
+</body>
+
+</html>
